@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='en-us' ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Gengwu Li">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='icon' href='/pics/icon.png' type='image/x-icon'>
+    <link rel="stylesheet" media="screen and (min-width: 601px)" href="/css/desktop.css" />
+    <link rel="stylesheet" media="screen and (max-width: 600px)" href="/css/mobile.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Rancho|Inconsolata&effect=shadow-multiple|fire-animation">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.0/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.0/angular-animate.js"></script>
+    <script src="https://code.angularjs.org/1.5.0/angular-messages.js"></script>
+    <script src="https://code.angularjs.org/1.5.0/angular-resource.js"></script>
+    <script src="https://code.angularjs.org/1.5.0/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.4/ui-bootstrap-tpls.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-inview/angular-inview.js"></script>
+    <script src="app/post/app.post.module.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/main.controller.js"></script>
+    <script src="app/post/post.filter.js"></script>
+    <script src="app/post/post.controller.js"></script>
+    <script src="app/services/api.service.js"></script>
+    <script src="app/services/user.service.js"></script>
+    <script src="app/login/login.controller.js"></script>
+    <script src="app/follow/follow.controller.js"></script>
+    <script src="app/status/status.controller.js"></script>
+    <script src="app/profile/profile.controller.js"></script>
+    <script src="app/login/custom/input.factory.js"></script>
+    <script src="app/post/modalInstance.controller.js"></script>
+    <script src="app/login/custom/my-form.directive.js"></script>
+    <script src="app/login/custom/my-field.directive.js"></script>
+    <script src="app/login/custom/nameValid.directive.js"></script>
+    <script src="app/login/custom/phoneValid.directive.js"></script>
+    <script src="app/login/custom/postalValid.directive.js"></script>
+    <title>Talk&Tie</title>
+</head>
+
+<body>
+    <div ng-view></div>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<nav class="navbar navbar-full navbar-fixed-top navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#profileCollapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">
+                <span><img src="/pics/icon.png" width="40" height="40"></span>
+                <span class="font-effect-fire-animation">ɔc<span>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="profileCollapse">
+        <form class="navbar-form navbar-left pull-right" role="login">
+            <a type="submit" class="btn btn-default" ng-click="vm.back()"><span class="glyphicon glyphicon glyphicon-home"></span>Back</a>
+            </form>
+        </div>
+    </div>
+</nav>
+<div class="col-md-6 col-md-offset-1 columns">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>Update profile </h4>
+        </div>
+        <div class="panel-body">
+            <form role="form" name="profileForm">
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-1">
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" name="email" placeholder="email" id="email" ng-model="vm.email">
+                            <div class="errors" ng-if="profileForm.email.$dirty" ng-messages="profileForm.email.$error">
+                                <div ng-messages-include="app/login/errors.template.html"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 col-sm-offset-1">
+                        <div class="form-group">
+                            <label for="zipcode">Zip code:</label>
+                            <input type="text" class="form-control" name="zipcode" placeholder="zipcode" id="zipcode" ng-model="vm.zipcode" zipcode-validator>
+                        </div>
+                        <div class="errors" ng-if="profileForm.zipcode.$dirty" ng-messages="profileForm.zipcode.$error">
+                            <div ng-messages-include="app/login/errors.template.html"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-1">
+                        <div class="form-group">
+                            <label for="password">Password:<span class="errors">{{vm.passwordstatus}}</span></label>
+                            <input type="password" class="form-control" name="password" id="password" ng-model="vm.password" ng-pattern="vm.repassword">
+                            <div class="errors" ng-if="profileForm.password.$dirty" ng-messages="profileForm.password.$error">
+                                <div ng-messages-include="app/login/errors.template.html"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 col-sm-offset-1">
+                        <div class="form-group">
+                            <label for="repassword">Confirm password:</label>
+                            <input type="password" class="form-control" name="repassword" id="repassword" ng-model="vm.repassword" ng-pattern="vm.password">
+                            <div class="errors" ng-if="profileForm.repassword.$dirty" ng-messages="profileForm.repassword.$error">
+                                <div ng-messages-include="app/login/errors.template.html"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" ng-disabled="profileForm.$invalid" class="btn btn-success" id="updateinfo" ng-click="vm.update()">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 columns">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>
+                {{vm.username}} 
+                <span ng-if="vm.isLinkAvailable">
+                <a class='btn btn-default' popover-trigger="outsideClick" popover-title='Choose account to merge' uib-popover-template="dynamicPopover.mergeUrl" popover-placement="bottom">
+                <i class="glyphicon glyphicon-link" ></i>Merge
+                </a>
+                <a class='btn btn-default' ng-click="vm.demerge(whichOne)">
+                <i class="glyphicon glyphicon-remove" ></i>Part
+                </a> <label><h4>{{vm.mergeInfo}}<h4></label></span>
+                </h4>
+        </div>
+        <div class="panel-body">
+            <div class="media">
+                <div class="media-left">
+                    <img class="media-object img-rounded" ng-src="{{vm.avatar}}" width="80" height="80">
+                    <span class="fileUpload btn btn-link" id='userPicUpdate'>
+                            <span>New avatar</span>
+                    <input class="upload" type="file" accept="image/*" onchange="angular.element(this).scope().vm.setFile(this)">
+                    </span>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">Current Info</h4>
+                    <div>
+                        <p ng-model="vm.nameInfo">Name: {{vm.nameInfo}}</p>
+                        <p ng-model="vm.emailInfo">Email: {{vm.emailInfo}}</p>
+                        <p ng-model="vm.zipcodeInfo">Zip code: {{vm.zipcodeInfo}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/ng-template" id="merge.html">
+    <div class="form-group">
+        <div class="form-group">
+            <label for="password">Username:</label>
+            <input type="text" class="form-control" ng-model="usernameToLink">
+        </div>
+        <div class="form-group">
+            <label for="repassword">Password:</label>
+            <input type="password" class="form-control" ng-model="passwordToLink">
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-success" ng-click="vm.merge(usernameToLink, passwordToLink)">Merge</button>
+        </div>
+    </div>
+</script>

@@ -1,0 +1,16 @@
+{
+  "name": "e2e-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "indx.js",
+  "scripts": {
+    "test": "protractor e2e/protractor.conf.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+       "jasmine-core": "^2.3.4",
+       "jasmine-reporters": "^2.0.7"
+  }
+}

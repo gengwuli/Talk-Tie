@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+ <testsuite name="In class End to End Exercise" timestamp="2016-03-25T00:37:13" hostname="localhost" time="27.092" errors="0" tests="10" skipped="0" disabled="0" failures="0">
+  <testcase classname="In class End to End Exercise" name="should login in" time="3.15" />
+  <testcase classname="In class End to End Exercise" name="should register a new user" time="4.126" />
+  <testcase classname="In class End to End Exercise" name="should create a new post and validate the post appears in the feed" time="3.269" />
+  <testcase classname="In class End to End Exercise" name="should update the status headline and verify the change" time="2.366" />
+  <testcase classname="In class End to End Exercise" name="should count the number of followed users" time="1.738" />
+  <testcase classname="In class End to End Exercise" name="should add the user &quot;Follower&quot; to the list of followed users and verify the count increases by one" time="2.32" />
+  <testcase classname="In class End to End Exercise" name="should remove the user &quot;Follower&quot; from the list of followed users and verify the count decreases by one" time="2.008" />
+  <testcase classname="In class End to End Exercise" name="should search for &quot;Only One Post Like This&quot; and verify only one post shows, and verify the author" time="2.262" />
+  <testcase classname="In class End to End Exercise" name="should navigate to the profile view and verify the page is loaded" time="1.748" />
+  <testcase classname="In class End to End Exercise" name="should test email, zipcode and password" time="4.101" />
+ </testsuite>
+</testsuites>

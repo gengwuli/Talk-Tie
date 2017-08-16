@@ -1,0 +1,64 @@
+<div ng-controller="PostController as vm">
+    <div class="well well-sm">
+        <div class="row">
+            <div class="col-md-3 col-md-offset-0">
+                <h3 id="newPost">New Post</h3>
+            </div>
+            <div class="fileUpload btn btn-small thirdparty btn-default col-md-1 col-md-offset-6" id="postPicBtn">
+                <input class="upload" type="file" accept="image/*" onchange="angular.element(this).scope().vm.setFile(this)">
+            </div>
+            <div class="fileUpload btn btn-default btn-small col-md-1" ng-click="vm.addPost(vm.post_body)" id="newPostBtn">
+            </div>
+        </div>
+        <textarea class="form-control" placeholder="post body" ng-model="vm.post_body" ng-focus="vm.showPic=true"></textarea>
+        <br>
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for keyword" ng-model="vm.searchKeyword">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+            </span>
+        </div>
+    </div>
+    <hr>
+    <div class="well well-sm" ng-repeat="post in vm.posts | postFilter:vm.searchKeyword | orderBy: 'date':true">
+        <ul>
+            <li>
+                <h3>{{post.title}}</h3>
+                <a class="pull-right" ng-show="{{vm.isAuthor(post.author)}}" ng-click="vm.openModal($index)">Edit</a>
+                <h4>Author:<strong class="postAuthor">{{post.author}}</strong>  Date:{{post.date | date: 'yyyy-MM-dd hh:mm:ss' }}</h4>
+                <div class="thumbnail" ng-show="post.img">
+                    <img ng-src="{{post.img}}">
+                </div>
+                <p>{{post.body}}</p>
+                <a ng-click="showComments=!showComments; toggleComment=showComments?'Hide comments':'Show comments'" ng-init="toggleComment='Show comments'">{{toggleComment}}</a>
+                <div ng-show="showComments">
+                    <ul>
+                        <!-- Iterate through every comment and show an edit link if necessary -->
+                        <li ng-repeat="comment in post.comments">
+                            <br>
+                            <span>{{comment.date  | date: 'yyyy-MM-dd hh:mm:ss' }}</span>
+                            <br>
+                            <span><strong class="commentAuthor">{{comment.author}}</strong>: {{comment.body}}</span>
+                            <a ng-show="{{vm.isAuthor(comment.author)}}" uib-popover-template="vm.popovertemplateUrl.templateUrl">Edit</a>
+                        </li>
+                    </ul>
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control" placeholder="Add a comment" ng-model="comment">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-xs btn-default" ng-click="vm.addComment(comment, post); comment=''">
+                                <i class="glyphicon glyphicon-comment"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <h4 class="errors">{{vm.pageInfo}}</h4>
+    <div class="btn-group" id="pageControl">
+        <button type="button" class="btn btn-default pages" ng-click="vm.goToPage(vm.whichPage=vm.firstPage)"><i class="glyphicon glyphicon-step-backward"></i></button>
+        <button type="button" class="btn btn-default pages" ng-click="vm.goToPage(vm.whichPage=vm.whichPage-1)"><i class="glyphicon glyphicon-triangle-left"></i></button>
+        <button type="button" class="btn btn-default pages" ng-click="vm.goToPage(vm.whichPage=vm.whichPage+1)"><i class="glyphicon glyphicon-triangle-right"></i></button>
+        <button type="button" class="btn btn-default pages" ng-click="vm.goToPage(vm.whichPage=vm.lastPage)"><i class="glyphicon glyphicon-step-forward"></i></button>
+    </div>
+</div>
