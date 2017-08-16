@@ -66,8 +66,8 @@ passport.deserializeUser(function(id, done) {
 
 //Third party authentication
 passport.use(new FacebookStrategy({
-    'clientSecret': '7a927778176796bc2305412c4dc93154',
-    'clientID': '1611557849164946',
+    'clientSecret': '*************************',
+    'clientID': '***************************',
     'callbackURL': authCallbackUrl+'/facebook/callback',
     profileFields: ['id', 'email', 'name'],
 }, function(token, refreshToken, profile, done) {
@@ -77,8 +77,8 @@ passport.use(new FacebookStrategy({
 }))
 
 passport.use(new GoogleStrategy({
-        clientID: '650400569566-hs3t9knr74iptoaishrdcklpol9r30i2.apps.googleusercontent.com',
-        clientSecret: 'a7w7cv5lMPDCv0GaqXAlvuOG',
+        clientID: '*******************************************',
+        clientSecret: '***************************************',
         callbackURL: authCallbackUrl+'/google/callback'
     },
     function(accessToken, refreshToken, profile, done) {
@@ -89,8 +89,8 @@ passport.use(new GoogleStrategy({
 ));
 
 passport.use(new TwitterStrategy({
-        consumerKey: 'ScJHWeOYIrbbpkIZqFIdtETvK',
-        consumerSecret: 'IUuFInEVDRkBGYIab7uqvHVaGr2Hw8ehfUfgvIaF2KNW5BZrPH',
+        consumerKey: '***********************************',
+        consumerSecret: '*************************************',
         callbackURL: authCallbackUrl+'/twitter/callback'
     },
     function(token, tokenSecret, profile, done) {
