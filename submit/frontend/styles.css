@@ -1,0 +1,202 @@
+[ng-messages],
+.errors {
+    color: #F00;
+    text-shadow: 1px 1px 1px rgba(255, 71, 0, 0.72);
+    font-family: Inconsolata;
+}
+
+@font-face {
+    font-family: LiSu;
+    src: url("https://www.myfontfree.com/data/1/l/lisu/chinese.simli.ttf");
+}
+
+label {
+    color: #D2691E;
+    background-color: 'red';
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto 24px auto;
+    background: rgba(255, 255, 255, 0.9) none repeat scroll 0 0;
+}
+
+#followul {
+    background-color: rgba(35, 27, 27, 0) !important;
+    border: 20px solid wheat;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+#followli {
+    box-shadow: 0 0 23px 0 #ffb29a;
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: rgb(255, 244, 204);
+    border: 1px solid #ddd;
+}
+
+body {
+    background: url("https://s3-us-west-2.amazonaws.com/gengwuli/back.svg") no-repeat center fixed;
+    font-family: 'Open Sans', Arial, sans-serif !important;
+    padding-top: 6em;
+}
+
+.navbar-brand {
+    padding-top: 6px !important;
+}
+
+.navbar-brand > span {
+    padding-top: 6px !important;
+    font-size: 2em !important;
+    color: black !important;
+}
+
+div.panel-title {
+    font-family: Inconsolata !important;
+}
+
+label,
+.btn.btn-primary,
+h3,
+h4 {
+    font-family: Inconsolata !important;
+}
+
+p,
+li>span,
+a {
+    font-family: Inconsolata !important;
+}
+
+.panel-footer>div {
+    text-align: center;
+    font-family: Inconsolata;
+}
+
+.panel {
+    background: url("https://s3-us-west-2.amazonaws.com/gengwuli/panelback.jpg");
+}
+
+#followul {
+    background-color: rgba(35, 27, 27, 0.62);
+    border: 20px solid rgba(76, 63, 38, 0);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+#followli {
+    box-shadow: 0 0 23px 0 rgb(6, 3, 3);
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: rgba(255, 244, 204, 0.51);
+    border: 1px solid #ddd;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 1em;
+    color: black;
+}
+
+.well {
+    background-color: rgba(254, 249, 245, 0.7) !important;
+}
+
+.panel {
+    background-color: rgba(254, 249, 245, 0.95) !important;
+}
+
+.navbar-inverse {
+    background-color: rgba(34, 34, 34, 0.9) !important;
+    border-color: rgba(8, 8, 8, 0);
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+[ng-show='vm.showPic'] {
+    text-align: right;
+}
+
+.commentAuthor {
+    color: #189ACD;
+}
+
+.postAuthor {
+    color: #467E54;
+}
+
+#userPicUpdate {
+    margin-top: 0;
+    padding-top: 0;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+#newPost {
+    margin-top: 0.5em;
+    text-align: left;
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.9) none repeat scroll 0 0 !important;
+}
+
+@media (min-width: 800px) {
+    #right {
+        flex-grow: 1;
+        flex-basis: 0;
+    }
+    #left {
+        flex-grow: 0;
+        flex-basis: 0;
+    }
+    #wrapper {
+        display: inline-flex;
+        display: -webkit-flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 400px) {
+    #wrapper {
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+}
+
+.thirdparty {
+    background-size: cover;
+}
+
+.facebook {
+    background-image: url('https://s3-us-west-2.amazonaws.com/gengwuli/F_icon.svg') !important
+}
+.google {
+    background-image: url('https://s3-us-west-2.amazonaws.com/gengwuli/google.svg') !important
+}
+.twitter {
+    background-image: url('https://s3-us-west-2.amazonaws.com/gengwuli/twitter.svg') !important
+}

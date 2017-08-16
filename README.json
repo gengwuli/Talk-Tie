@@ -1,0 +1,5 @@
+{ 
+     "netid": "gl22",
+  "frontend": "https://gengwufront.herokuapp.com/",
+   "backend": "https://gengwuback.herokuapp.com/"
+}

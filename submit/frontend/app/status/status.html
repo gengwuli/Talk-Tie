@@ -1,0 +1,27 @@
+<div ng-controller="StatusController as vm" class="panel panel-default">
+    <div class="panel-heading">
+        <h3>{{vm.username}}</h3>
+    </div>
+    <div class="panel-body">
+        <div class="media">
+            <div class="media-left">
+
+                <img class="media-object img-rounded" ng-src="{{vm.avatar}}" alt="..." width="80" height="80">
+            </div>
+            <div class="media-body">
+
+                <h4 class="media-heading " id="status">{{vm.currentStatus}}</h4>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="input-group">
+                            <input type='text' ng-model="vm.newStatus" class='form-control' placeholder="Update status here">
+                            <span class="input-group-btn">
+                                <button class='btn btn-default' ng-click="vm.updateStatus(vm.newStatus)">Update</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
