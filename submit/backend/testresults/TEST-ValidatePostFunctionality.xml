@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<testsuites>
-<testsuite name="Validate Post Functionality" errors="0" tests="2" failures="0" time="0.067" timestamp="2016-03-25T02:05:02">
-  <testcase classname="Validate Post Functionality" name="should give me three or more posts" time="0.034"></testcase>
-  <testcase classname="Validate Post Functionality" name="should add a new post" time="0.029"></testcase>
-</testsuite>
-</testsuites>
