@@ -1,0 +1,7 @@
+./backend/node_modules
+./backend/cred.json
+./backend/initDatabase.js
+./backend/npm-debug.log
+./backend/upload.sh
+./frontend/npm-debug.log
+./frontend/upload.sh
